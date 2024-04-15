@@ -18,7 +18,7 @@ Firstly, the question of how to sort the data arose: should it be done by date o
 
 Second issue was the aggregation of both files. To maintain the granularity of the data and ensure that each weekend's metrics are accurately represented without introducing anomalies, the appropriate approach was to append the data from each day to create a combined CSV file. This preserves the original metric dates for each record, allowing for accurate analysis and reporting.
 
-By appending the data and sorting it, we maintain the chronological order of the metrics while ensuring that each day's data is distinct and identifiable. This approach aligns with the goal of maintaining data integrity and avoiding anomalies in the combined dataset. 
+By appending the data and sorting it, we ensure that each day's data is distinct and identifiable. This approach aligns with the goal of maintaining data integrity and avoiding anomalies in the combined dataset. 
 
 
 
