@@ -25,7 +25,7 @@ def main():
 
     output_file_name = f"data_{date1}_{date2}_combined.csv"
 
-    combined_df["combining_date"] = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+    combined_df["combining_date"] = datetime.now().strftime("%Y-%m-%d")
 
     combined_df.to_csv(output_file_name, index=False)
 
