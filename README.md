@@ -20,5 +20,7 @@ Second issue was the aggregation of both files. To maintain the granularity of t
 
 By appending the data and sorting it, we ensure that each day's data is distinct and identifiable. This approach aligns with the goal of maintaining data integrity and avoiding anomalies in the combined dataset. 
 
+Lastly the issue of naming. I tried to stick to the naming convention of the original files and I decided to rename the files to be more descriptive. There could be a problem with shorter names when the weekend falls at the end of the month or at the end of the year and thus both days are mentioned in addition to the "combined" keyword.
+
 
 
