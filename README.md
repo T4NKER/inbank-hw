@@ -4,7 +4,11 @@
 
 Using four tables (payments, currencies, exchange rates, blacklist), please write a query to return the amounts in euros aggregated by transaction_date.
 
-This was fairly straight-forward. I used mostly LEFTJOIN to get the valid data, taking into account the currencies that had expired, users on blacklist, correct currency_id. There was some ambiguity with the blacklist, since there was an end date aswell meaning that the user could be whitelisted after some time period and this needed to be taken into account. This is the main reason the WHERE clause is as long as it is.
+To run: 
+
+`cd WeekendDatProcessing && python3 combine_csvs.py data_2023-02-11.csv data_2023-02-12.csv`
+
+This was fairly straight-forward. I used mostly LEFTJOIN to get the valid data, taking into account the currencies that had expired, users on blacklist, correct currency_id. There was some ambiguity with the blacklist, since there was an end date aswell meaning that the user could be whitelisted after some time period and this needed to be taken into account.
 
 ## Part 2: Weekend Data Processing (Python)
 
@@ -12,7 +16,7 @@ This was fairly straight-forward. I used mostly LEFTJOIN to get the valid data, 
 
 ####  Output: 1 csv file with Saturday and Sunday data combined.
 
-This required some consideration as there was two things to ponder:
+This required some consideration as there was three things to ponder:
 
 Firstly, the question of how to sort the data arose: should it be done by date or by metric_id? The decision was made to opt for the latter as it enhances readability and comprehension, especially when scanning through the data.
 
@@ -20,7 +24,7 @@ Second issue was the aggregation of both files. To maintain the granularity of t
 
 By appending the data and sorting it, we ensure that each day's data is distinct and identifiable. This approach aligns with the goal of maintaining data integrity and avoiding anomalies in the combined dataset. 
 
-Lastly the issue of naming. I tried to stick to the naming convention of the original files and I decided to rename the files to be more descriptive. There could be a problem with shorter names when the weekend falls at the end of the month or at the end of the year and thus both days are mentioned in addition to the "combined" keyword.
+Lastly the issue of naming. Sticking to the naming convention of the original files and it was decided to rename the files to be more descriptive. There could be a problem with shorter names when the weekend falls at the end of the month or at the end of the year and thus both days are mentioned in addition to the "combined" keyword.
 
 
 
