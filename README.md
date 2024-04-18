@@ -4,11 +4,11 @@
 
 Using four tables (payments, currencies, exchange rates, blacklist), please write a query to return the amounts in euros aggregated by transaction_date.
 
-To run: 
+To run while in root: 
 
 `cd WeekendDatProcessing && python3 combine_csvs.py data_2023-02-11.csv data_2023-02-12.csv`
 
-This was fairly straight-forward. I used mostly LEFTJOIN to get the valid data, taking into account the currencies that had expired, users on blacklist, correct currency_id. There was some ambiguity with the blacklist, since there was an end date aswell meaning that the user could be whitelisted after some time period and this needed to be taken into account. A similar date that should've been taken into consideration was the exchange date and transaction date relation. The line "OR c.END_DATE >= p.TRANSACTION_DATE" checks if the currency was still valid during the time of the transaction.
+This was fairly straight-forward. I used joins to get the valid data, taking into account the currencies that had expired, users on blacklist, correct currency_id. There was some ambiguity with the blacklist, since there was an end date aswell suggesting that the user could be whitelisted after some time period and this needed to be taken into account. A similar date that should've been taken into consideration was the exchange date and transaction date relation. The line "OR c.END_DATE >= p.TRANSACTION_DATE" checks if the currency was still valid during the time of the transaction.
 
 ## Part 2: Weekend Data Processing (Python)
 
